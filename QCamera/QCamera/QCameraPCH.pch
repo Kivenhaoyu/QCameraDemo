@@ -1,0 +1,24 @@
+//
+//  QCameraPCH.pch
+//  QCamera
+//
+//  Created by   何舒 on 16/3/23.
+//  Copyright © 2016年 Aaron. All rights reserved.
+//
+
+#ifndef QCameraPCH_pch
+#define QCameraPCH_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* QCameraPCH_pch */
+
+#ifdef __OBJC__
+#import "HTTPRequestPost.h"
+#import "SVProgressHUD.h"
+#import "content.h"
+#import "Config.h"
+#import "UIImageView+AFNetworking.h"
+#import "UserInfoClass.h"
+#endif
