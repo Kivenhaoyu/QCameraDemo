@@ -92,6 +92,12 @@ static UserInfoClass *_userInfo=nil;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"bucket"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    _userInfo.device_id = @"";
+    _userInfo.author_token = @"";
+    _userInfo.bucket = @"";
+    _userInfo.userCount = @"";
+    _userInfo.passWord = @"";
+    
     self.isLogin=NO;
     
 }

@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView * tableView;
 @property (nonatomic ,assign) BOOL ischange;
+@property (weak, nonatomic) IBOutlet UIButton *backbtn;
+//@property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 
 @end

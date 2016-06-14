@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView * uploadImage;
 @property (nonatomic, strong) NSString * url;
-@property (nonatomic, strong) NSDictionary * dic;
-- (instancetype)initWithDic:(NSDictionary *)dict;
+@property (nonatomic, strong) NSString * videoName;
+- (instancetype)initWithVideoName:(NSString *)videoName;
 
 @end

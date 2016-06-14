@@ -8,6 +8,7 @@
 
 #import "ChooseBucketsVC.h"
 #import "MJRefresh.h"
+#import "LoginVC.h"
 
 @interface ChooseBucketsVC ()
 @property (nonatomic, strong) NSMutableArray * dataArray;
@@ -81,6 +82,30 @@
 {
     [self.tableView footerEndRefreshing];
 }
+- (IBAction)backBucketAction:(id)sender {
+    if (self.ischange) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }else{
+        [SVProgressHUD showAlterMessage:@"空间名不能为空"];
+    }
+}
+//- (IBAction)logoutAction:(id)sender {
+//    [[UserInfoClass sheardUserInfo] userLogout];
+//    if (self.ischange) {
+//        [self dismissViewControllerAnimated:YES completion:^{
+//        }];
+//        LoginVC * loginVC = [[LoginVC alloc] init];
+//        [self presentViewController:loginVC animated:YES completion:^{
+//        }];
+//    }else
+//    {
+//        [self dismissViewControllerAnimated:YES completion:^{
+//        }];
+//    }
+//    
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -99,7 +124,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    cell.textLabel.text = kWipeNullKong(self.dataArray[indexPath.row]);
     return cell;
 }
 
@@ -108,10 +133,9 @@
     [[UserInfoClass sheardUserInfo] setTheBucket:self.dataArray[indexPath.row]];
     if (self.ischange) {
         [self dismissViewControllerAnimated:YES completion:^{
-            
         }];
     }else{
-    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

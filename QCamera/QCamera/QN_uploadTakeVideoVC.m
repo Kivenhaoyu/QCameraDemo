@@ -8,6 +8,7 @@
 
 #import "QN_uploadTakeVideoVC.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "QN_PlayVideoVC.h"
 
 @interface QN_uploadTakeVideoVC ()
 
@@ -18,6 +19,10 @@
 
 @property (nonatomic, strong) NSString * key;
 @property (nonatomic, strong) NSString * host;
+@property (nonatomic, strong) NSTimer * transformTimer;
+@property (nonatomic, strong) NSString *pipeline;
+@property (nonatomic, assign) BOOL isCamera;
+@property (nonatomic, strong) NSDictionary * transformDic;
 
 @end
 
@@ -26,23 +31,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = self.functionTitle;
+    self.title = @"视频";
     self.uploadImage.contentMode = UIViewContentModeScaleAspectFit;
     self.showLabel.hidden = YES;
-    
     self.prograssView.hidden = YES;
-    self.prograssView.progress = 0.0f;
-    
+    self.transformView.hidden = YES;
     self.assetslibrary = [[ALAssetsLibrary alloc] init];
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.transformTimer invalidate];
+    [self.timer invalidate];
+}
+
 - (IBAction)takePhotoAction:(id)sender {
-    [self gotoImageLibrary];
+    [self stopTransform];
+    [self gotoTakeVideo];
+    self.isCamera = YES;
+}
+
+- (IBAction)takeLibraryPhotoAction:(id)sender
+{
+    [self stopTransform];
+    [self gotoLibrary];
+    self.isCamera = NO;
 }
 - (IBAction)uploadAction:(id)sender {
+    [self stopTransform];
+    self.transformDic = nil;
+    [self.timer invalidate];
     if (!self.asset) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"还未选择资源图片" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }else
     {
         self.showLabel.hidden = NO;
@@ -59,8 +81,9 @@
         return;
     }
     self.key = self.fillKey.text;
+    self.key = [self.key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *device_id = [UserInfoClass sheardUserInfo].device_id;
-    NSArray * array =[[NSArray alloc] initWithObjects:@"X-Qiniu-Key",self.key,@"X-Qiniu-Overwrite",@"false",@"X-Qiniu-Device-Id",device_id,nil];
+    NSArray * array =[[NSArray alloc] initWithObjects:@"X-Qiniu-Key",self.key,@"X-Qiniu-Overwrite",@"false",@"X-Qiniu-Device-Id",device_id,@"X-Qiniu-Content-Type",@"av",nil];
     [HTTPRequestPost hTTPRequest_PUTpostBody:nil andUrl:@"upload/token" andSucceed:^(NSURLSessionDataTask *task, id responseObject) {
         self.token = responseObject[@"token"];
         self.host = responseObject[@"host"];
@@ -71,9 +94,9 @@
 }
 
 /**
- *  调用系统相册
+ *  调用系统拍摄
  */
--(void)gotoImageLibrary
+-(void)gotoTakeVideo
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     
@@ -88,22 +111,42 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+//打开本地相册
+-(void)gotoLibrary
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+    {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+        [self presentViewController:picker animated:YES completion:nil];
+    }
+}
+
 //再调用以下委托：
 #pragma mark UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     
-    NSString * videoURL = [info valueForKey:UIImagePickerControllerMediaURL];
     ALAssetsLibraryAssetForURLResultBlock resultBlock = ^(ALAsset * asset)
     {
         self.asset = asset;
     };
-    [self.assetslibrary writeVideoAtPathToSavedPhotosAlbum:videoURL completionBlock:^(NSURL *assetURL, NSError *error) {
-        self.videoPath = assetURL;
-        [self.assetslibrary assetForURL:self.videoPath resultBlock:resultBlock failureBlock:nil];
+    if (self.isCamera) {
+        NSURL * videoURLString = [info valueForKey:UIImagePickerControllerMediaURL];
+        [self.assetslibrary writeVideoAtPathToSavedPhotosAlbum:videoURLString completionBlock:^(NSURL *assetURL, NSError *error) {
+            self.videoPath = [assetURL absoluteString];
+            
+            [self.assetslibrary assetForURL:assetURL resultBlock:resultBlock failureBlock:nil];
+        }];
+    }else{
+        NSURL * videoURLString = [info valueForKey:UIImagePickerControllerReferenceURL];
+    [self.assetslibrary assetForURL:videoURLString resultBlock:resultBlock failureBlock:nil];
+    }
+    [picker dismissViewControllerAnimated:YES completion:^{
     }];
-    [picker dismissModalViewControllerAnimated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -128,7 +171,7 @@
     QNUploadManager *upManager = [[QNUploadManager alloc] initWithConfiguration:config];
     
     //当上传的文件名字一样时，默认为上传失败
-//    QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    //    QNUploadManager *upManager = [[QNUploadManager alloc] init];
     QNUploadOption * uploadOption = [[QNUploadOption alloc] initWithMime:nil progressHandler:^(NSString *key, float percent) {
         self.percentFloat = percent;
     } params:nil checkCrc:NO cancellationSignal:nil];
@@ -137,13 +180,70 @@
         
         NSLog(@"info ===== %@", info);
         NSLog(@"resp ===== %@", resp);
-        
-        NSLog(@"%@/%@",self.domain,key);
+        if (!info.error) {
+            [self startTransform];
+            self.pipeline = resp[@"pipeline"];
+        }else
+        {
+            [SVProgressHUD showAlterMessage:[NSString stringWithFormat:@"%@",info.error.userInfo]];
+        }
+
         
     } option:uploadOption];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(getPercent) userInfo:nil repeats:YES];
     
 }
+
+- (void)stopTransform
+{
+    self.playView.hidden = NO;
+    [self.transformTimer invalidate];
+    self.transformView.hidden = YES;
+    [self.tranformActivity stopAnimating];
+}
+
+- (void)startTransform
+{
+    int value = (arc4random() % 5) + 1;
+    self.transformTimer = [NSTimer scheduledTimerWithTimeInterval:value target:self selector:@selector(checkTransform) userInfo:nil repeats:YES];
+    self.transformView.hidden = NO;
+    [self.tranformActivity startAnimating];
+}
+
+- (void)checkTransform
+{
+    [HTTPRequestPost hTTPRequest_PostpostBody:nil andUrl:[NSString stringWithFormat:@"pipeline/%@",self.pipeline] andSucceed:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"responseObject == %@",responseObject );
+        if ([responseObject[@"code"] isEqualToString:@"OperationProcessing"]) {
+            //continue
+        }else if([responseObject[@"code"] isEqualToString:@"OperationSuccess"])
+        {
+            self.transformDic = responseObject;
+            [self stopTransform];
+            [self uploadImageView];
+            [SVProgressHUD showAlterMessage:@"转码成功"];
+        }else
+        {
+            [self stopTransform];
+            [SVProgressHUD showAlterMessage:@"转码失败"];
+        }
+    } andFailure:^(NSURLSessionDataTask *task, NSError *error) {
+        [self stopTransform];
+    } andISstatus:NO];
+}
+
+- (void)uploadImageView
+{
+    NSArray * array =[[NSArray alloc] initWithObjects:@"X-Qiniu-Key",self.transformDic[@"cover"],nil];
+    [HTTPRequestPost hTTPRequest_PUTpostBody:nil andUrl:@"download/url" andSucceed:^(NSURLSessionDataTask *task, id responseObject) {
+        self.playView.hidden = NO;
+        [self.playImage setImageWithURL:[NSURL URLWithString:responseObject[@"url"]] placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
+    } andFailure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    } andISstatus:NO andHeader:array];
+}
+
+
 
 - (void)getPercent
 {
@@ -157,19 +257,34 @@
     
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.fillKey resignFirstResponder];
+}
+- (IBAction)playAction:(id)sender {
+    if (self.transformDic[@"mp4"]) {
+        QN_PlayVideoVC * play = [[QN_PlayVideoVC alloc] initWithVideoName:self.transformDic[@"mp4"]];
+        [self.navigationController pushViewController:play animated:YES];
+    }else
+    {
+        [SVProgressHUD showAlterMessage:@"无法预览转码视频"];
+    }
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

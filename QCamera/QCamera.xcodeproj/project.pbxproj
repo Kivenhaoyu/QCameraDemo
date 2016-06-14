@@ -7,7 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E4CE227CCACA6B4766F41F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C89C47460190A17ABCDEC3 /* libPods.a */; };
+		9301B4791CE90AF500DFA141 /* application@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B45D1CE90AF500DFA141 /* application@2x.png */; };
+		9301B47A1CE90AF500DFA141 /* application@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B45E1CE90AF500DFA141 /* application@3x.png */; };
+		9301B47B1CE90AF500DFA141 /* csv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B45F1CE90AF500DFA141 /* csv@2x.png */; };
+		9301B47C1CE90AF500DFA141 /* csv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4601CE90AF500DFA141 /* csv@3x.png */; };
+		9301B47D1CE90AF500DFA141 /* doc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4611CE90AF500DFA141 /* doc@2x.png */; };
+		9301B47E1CE90AF500DFA141 /* doc@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4621CE90AF500DFA141 /* doc@3x.png */; };
+		9301B47F1CE90AF500DFA141 /* exe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4631CE90AF500DFA141 /* exe.png */; };
+		9301B4801CE90AF500DFA141 /* exe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4641CE90AF500DFA141 /* exe@2x.png */; };
+		9301B4811CE90AF500DFA141 /* flv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4651CE90AF500DFA141 /* flv@2x.png */; };
+		9301B4821CE90AF500DFA141 /* flv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4661CE90AF500DFA141 /* flv@3x.png */; };
+		9301B4831CE90AF500DFA141 /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4671CE90AF500DFA141 /* image@2x.png */; };
+		9301B4841CE90AF500DFA141 /* image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4681CE90AF500DFA141 /* image@3x.png */; };
+		9301B4851CE90AF500DFA141 /* mov@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4691CE90AF500DFA141 /* mov@2x.png */; };
+		9301B4861CE90AF500DFA141 /* mov@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B46A1CE90AF500DFA141 /* mov@3x.png */; };
+		9301B4871CE90AF500DFA141 /* mpg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B46B1CE90AF500DFA141 /* mpg@2x.png */; };
+		9301B4881CE90AF500DFA141 /* mpg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B46C1CE90AF500DFA141 /* mpg@3x.png */; };
+		9301B4891CE90AF500DFA141 /* pdf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B46D1CE90AF500DFA141 /* pdf@2x.png */; };
+		9301B48A1CE90AF500DFA141 /* pdf@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B46E1CE90AF500DFA141 /* pdf@3x.png */; };
+		9301B48B1CE90AF500DFA141 /* ppt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B46F1CE90AF500DFA141 /* ppt@2x.png */; };
+		9301B48C1CE90AF500DFA141 /* ppt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4701CE90AF500DFA141 /* ppt@3x.png */; };
+		9301B48D1CE90AF500DFA141 /* rar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4711CE90AF500DFA141 /* rar@2x.png */; };
+		9301B48E1CE90AF500DFA141 /* rar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4721CE90AF500DFA141 /* rar@3x.png */; };
+		9301B48F1CE90AF500DFA141 /* wma@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4731CE90AF500DFA141 /* wma@2x.png */; };
+		9301B4901CE90AF500DFA141 /* wma@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4741CE90AF500DFA141 /* wma@3x.png */; };
+		9301B4911CE90AF500DFA141 /* xls@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4751CE90AF500DFA141 /* xls@2x.png */; };
+		9301B4921CE90AF500DFA141 /* xls@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4761CE90AF500DFA141 /* xls@3x.png */; };
+		9301B4931CE90AF500DFA141 /* zip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4771CE90AF500DFA141 /* zip@2x.png */; };
+		9301B4941CE90AF500DFA141 /* zip@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4781CE90AF500DFA141 /* zip@3x.png */; };
+		9301B4971CE90ED400DFA141 /* mp4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4951CE90ED400DFA141 /* mp4@2x.png */; };
+		9301B4981CE90ED400DFA141 /* mp4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4961CE90ED400DFA141 /* mp4@3x.png */; };
+		9301B49B1CE9109A00DFA141 /* quicktime@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B4991CE9109A00DFA141 /* quicktime@2x.png */; };
+		9301B49C1CE9109A00DFA141 /* quicktime@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9301B49A1CE9109A00DFA141 /* quicktime@3x.png */; };
 		93055BC81CA12605009389FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93055BC71CA12605009389FA /* main.m */; };
 		93055BCB1CA12605009389FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93055BCA1CA12605009389FA /* AppDelegate.m */; };
 		93055BCE1CA12605009389FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93055BCD1CA12605009389FA /* ViewController.m */; };
@@ -45,6 +76,7 @@
 		93D392191CA243ED00275C00 /* QN_uploadTakePhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D392141CA243ED00275C00 /* QN_uploadTakePhoto.xib */; };
 		93D3921A1CA243ED00275C00 /* QN_uploadTakeVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D392161CA243ED00275C00 /* QN_uploadTakeVideoVC.m */; };
 		93D3921B1CA243ED00275C00 /* QN_uploadTakeVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D392171CA243ED00275C00 /* QN_uploadTakeVideoVC.xib */; };
+		93F58AEB1CE99013001FA889 /* playLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F58AEA1CE99013001FA889 /* playLogo.png */; };
 		93F7F9B91CA30A8E002997E4 /* QN_PlayVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F7F9B71CA30A8E002997E4 /* QN_PlayVideoVC.m */; };
 		93F7F9BA1CA30A8E002997E4 /* QN_PlayVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F7F9B81CA30A8E002997E4 /* QN_PlayVideoVC.xib */; };
 		93F7F9BE1CA31247002997E4 /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F7F9BC1CA31247002997E4 /* ImageVC.m */; };
@@ -52,6 +84,7 @@
 		93F7F9C41CA3144E002997E4 /* icon-60@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F7F9C11CA3144E002997E4 /* icon-60@2.png */; };
 		93F7F9C51CA3144E002997E4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F7F9C21CA3144E002997E4 /* icon.png */; };
 		93F7F9C61CA3144E002997E4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F7F9C31CA3144E002997E4 /* icon@2x.png */; };
+		998BD0B4F50A476BF3D132E1 /* libPods-QCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 849349AFE913BC08831DE3A0 /* libPods-QCamera.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +105,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C289E8037ABB6D061850A68 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		82DC7522981EE1D86C7AF8E1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1F1D5C37AF9608ABB7F2183C /* Pods-QCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QCamera/Pods-QCamera.debug.xcconfig"; sourceTree = "<group>"; };
+		3E261DF62E20A73171B3E477 /* Pods-QCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-QCamera/Pods-QCamera.release.xcconfig"; sourceTree = "<group>"; };
+		849349AFE913BC08831DE3A0 /* libPods-QCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QCamera.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9301B45D1CE90AF500DFA141 /* application@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "application@2x.png"; sourceTree = "<group>"; };
+		9301B45E1CE90AF500DFA141 /* application@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "application@3x.png"; sourceTree = "<group>"; };
+		9301B45F1CE90AF500DFA141 /* csv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "csv@2x.png"; sourceTree = "<group>"; };
+		9301B4601CE90AF500DFA141 /* csv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "csv@3x.png"; sourceTree = "<group>"; };
+		9301B4611CE90AF500DFA141 /* doc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doc@2x.png"; sourceTree = "<group>"; };
+		9301B4621CE90AF500DFA141 /* doc@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doc@3x.png"; sourceTree = "<group>"; };
+		9301B4631CE90AF500DFA141 /* exe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exe.png; sourceTree = "<group>"; };
+		9301B4641CE90AF500DFA141 /* exe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exe@2x.png"; sourceTree = "<group>"; };
+		9301B4651CE90AF500DFA141 /* flv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flv@2x.png"; sourceTree = "<group>"; };
+		9301B4661CE90AF500DFA141 /* flv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flv@3x.png"; sourceTree = "<group>"; };
+		9301B4671CE90AF500DFA141 /* image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image@2x.png"; sourceTree = "<group>"; };
+		9301B4681CE90AF500DFA141 /* image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image@3x.png"; sourceTree = "<group>"; };
+		9301B4691CE90AF500DFA141 /* mov@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mov@2x.png"; sourceTree = "<group>"; };
+		9301B46A1CE90AF500DFA141 /* mov@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mov@3x.png"; sourceTree = "<group>"; };
+		9301B46B1CE90AF500DFA141 /* mpg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mpg@2x.png"; sourceTree = "<group>"; };
+		9301B46C1CE90AF500DFA141 /* mpg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mpg@3x.png"; sourceTree = "<group>"; };
+		9301B46D1CE90AF500DFA141 /* pdf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf@2x.png"; sourceTree = "<group>"; };
+		9301B46E1CE90AF500DFA141 /* pdf@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf@3x.png"; sourceTree = "<group>"; };
+		9301B46F1CE90AF500DFA141 /* ppt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ppt@2x.png"; sourceTree = "<group>"; };
+		9301B4701CE90AF500DFA141 /* ppt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ppt@3x.png"; sourceTree = "<group>"; };
+		9301B4711CE90AF500DFA141 /* rar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rar@2x.png"; sourceTree = "<group>"; };
+		9301B4721CE90AF500DFA141 /* rar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rar@3x.png"; sourceTree = "<group>"; };
+		9301B4731CE90AF500DFA141 /* wma@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wma@2x.png"; sourceTree = "<group>"; };
+		9301B4741CE90AF500DFA141 /* wma@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wma@3x.png"; sourceTree = "<group>"; };
+		9301B4751CE90AF500DFA141 /* xls@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xls@2x.png"; sourceTree = "<group>"; };
+		9301B4761CE90AF500DFA141 /* xls@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xls@3x.png"; sourceTree = "<group>"; };
+		9301B4771CE90AF500DFA141 /* zip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zip@2x.png"; sourceTree = "<group>"; };
+		9301B4781CE90AF500DFA141 /* zip@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zip@3x.png"; sourceTree = "<group>"; };
+		9301B4951CE90ED400DFA141 /* mp4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mp4@2x.png"; sourceTree = "<group>"; };
+		9301B4961CE90ED400DFA141 /* mp4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mp4@3x.png"; sourceTree = "<group>"; };
+		9301B4991CE9109A00DFA141 /* quicktime@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quicktime@2x.png"; sourceTree = "<group>"; };
+		9301B49A1CE9109A00DFA141 /* quicktime@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quicktime@3x.png"; sourceTree = "<group>"; };
 		93055BC31CA12605009389FA /* QCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93055BC71CA12605009389FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93055BC91CA12605009389FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -143,6 +209,7 @@
 		93D392151CA243ED00275C00 /* QN_uploadTakeVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QN_uploadTakeVideoVC.h; sourceTree = "<group>"; };
 		93D392161CA243ED00275C00 /* QN_uploadTakeVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QN_uploadTakeVideoVC.m; sourceTree = "<group>"; };
 		93D392171CA243ED00275C00 /* QN_uploadTakeVideoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QN_uploadTakeVideoVC.xib; sourceTree = "<group>"; };
+		93F58AEA1CE99013001FA889 /* playLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playLogo.png; sourceTree = "<group>"; };
 		93F7F9B61CA30A8E002997E4 /* QN_PlayVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QN_PlayVideoVC.h; sourceTree = "<group>"; };
 		93F7F9B71CA30A8E002997E4 /* QN_PlayVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QN_PlayVideoVC.m; sourceTree = "<group>"; };
 		93F7F9B81CA30A8E002997E4 /* QN_PlayVideoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QN_PlayVideoVC.xib; sourceTree = "<group>"; };
@@ -152,7 +219,6 @@
 		93F7F9C11CA3144E002997E4 /* icon-60@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2.png"; sourceTree = "<group>"; };
 		93F7F9C21CA3144E002997E4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		93F7F9C31CA3144E002997E4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		D3C89C47460190A17ABCDEC3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E4CE227CCACA6B4766F41F5 /* libPods.a in Frameworks */,
+				998BD0B4F50A476BF3D132E1 /* libPods-QCamera.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +247,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		034CC1C1826464F328888DE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F1D5C37AF9608ABB7F2183C /* Pods-QCamera.debug.xcconfig */,
+				3E261DF62E20A73171B3E477 /* Pods-QCamera.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		775624EFEA1F21FF1EA09459 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				849349AFE913BC08831DE3A0 /* libPods-QCamera.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9301B45C1CE90AF500DFA141 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				9301B4991CE9109A00DFA141 /* quicktime@2x.png */,
+				9301B49A1CE9109A00DFA141 /* quicktime@3x.png */,
+				9301B4951CE90ED400DFA141 /* mp4@2x.png */,
+				9301B4961CE90ED400DFA141 /* mp4@3x.png */,
+				93F58AEA1CE99013001FA889 /* playLogo.png */,
+				9301B45D1CE90AF500DFA141 /* application@2x.png */,
+				9301B45E1CE90AF500DFA141 /* application@3x.png */,
+				9301B45F1CE90AF500DFA141 /* csv@2x.png */,
+				9301B4601CE90AF500DFA141 /* csv@3x.png */,
+				9301B4611CE90AF500DFA141 /* doc@2x.png */,
+				9301B4621CE90AF500DFA141 /* doc@3x.png */,
+				9301B4631CE90AF500DFA141 /* exe.png */,
+				9301B4641CE90AF500DFA141 /* exe@2x.png */,
+				9301B4651CE90AF500DFA141 /* flv@2x.png */,
+				9301B4661CE90AF500DFA141 /* flv@3x.png */,
+				9301B4671CE90AF500DFA141 /* image@2x.png */,
+				9301B4681CE90AF500DFA141 /* image@3x.png */,
+				9301B4691CE90AF500DFA141 /* mov@2x.png */,
+				9301B46A1CE90AF500DFA141 /* mov@3x.png */,
+				9301B46B1CE90AF500DFA141 /* mpg@2x.png */,
+				9301B46C1CE90AF500DFA141 /* mpg@3x.png */,
+				9301B46D1CE90AF500DFA141 /* pdf@2x.png */,
+				9301B46E1CE90AF500DFA141 /* pdf@3x.png */,
+				9301B46F1CE90AF500DFA141 /* ppt@2x.png */,
+				9301B4701CE90AF500DFA141 /* ppt@3x.png */,
+				9301B4711CE90AF500DFA141 /* rar@2x.png */,
+				9301B4721CE90AF500DFA141 /* rar@3x.png */,
+				9301B4731CE90AF500DFA141 /* wma@2x.png */,
+				9301B4741CE90AF500DFA141 /* wma@3x.png */,
+				9301B4751CE90AF500DFA141 /* xls@2x.png */,
+				9301B4761CE90AF500DFA141 /* xls@3x.png */,
+				9301B4771CE90AF500DFA141 /* zip@2x.png */,
+				9301B4781CE90AF500DFA141 /* zip@3x.png */,
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
 		93055BBA1CA12604009389FA = {
 			isa = PBXGroup;
 			children = (
@@ -188,8 +311,8 @@
 				93055BDF1CA12605009389FA /* QCameraTests */,
 				93055BEA1CA12605009389FA /* QCameraUITests */,
 				93055BC41CA12605009389FA /* Products */,
-				D4743B6E3523CE887A51E148 /* Pods */,
-				C863C12425E48183684CB4B8 /* Frameworks */,
+				034CC1C1826464F328888DE2 /* Pods */,
+				775624EFEA1F21FF1EA09459 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,6 +371,7 @@
 		93055BC61CA12605009389FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9301B45C1CE90AF500DFA141 /* Pictures */,
 				93055BC71CA12605009389FA /* main.m */,
 				93CFCADB1CA1A80D00063820 /* QCameraPCH.pch */,
 			);
@@ -363,23 +487,6 @@
 			path = icon;
 			sourceTree = "<group>";
 		};
-		C863C12425E48183684CB4B8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D3C89C47460190A17ABCDEC3 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D4743B6E3523CE887A51E148 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1C289E8037ABB6D061850A68 /* Pods.debug.xcconfig */,
-				82DC7522981EE1D86C7AF8E1 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -387,12 +494,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93055BF01CA12605009389FA /* Build configuration list for PBXNativeTarget "QCamera" */;
 			buildPhases = (
-				CBBD52FF8C9C8FCF9B5C88DC /* Check Pods Manifest.lock */,
+				28F0CE43FA66948F7A0156B8 /* 📦 Check Pods Manifest.lock */,
 				93055BBF1CA12605009389FA /* Sources */,
 				93055BC01CA12605009389FA /* Frameworks */,
 				93055BC11CA12605009389FA /* Resources */,
-				307AABA56EF2E6C7EE04F66E /* Embed Pods Frameworks */,
-				40AF7A8088B2258831A1056D /* Copy Pods Resources */,
+				C3D79E22EE5BC7C94F5A21C3 /* 📦 Embed Pods Frameworks */,
+				FA0E3A22B46B42CF9F55C218 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -450,7 +557,7 @@
 				TargetAttributes = {
 					93055BC21CA12605009389FA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = GDFHW66V92;
+						DevelopmentTeam = W2TP34G2MM;
 					};
 					93055BDB1CA12605009389FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -487,22 +594,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9301B4831CE90AF500DFA141 /* image@2x.png in Resources */,
+				9301B4841CE90AF500DFA141 /* image@3x.png in Resources */,
+				9301B47A1CE90AF500DFA141 /* application@3x.png in Resources */,
+				9301B4801CE90AF500DFA141 /* exe@2x.png in Resources */,
 				93F7F9C41CA3144E002997E4 /* icon-60@2.png in Resources */,
+				9301B4791CE90AF500DFA141 /* application@2x.png in Resources */,
+				9301B4821CE90AF500DFA141 /* flv@3x.png in Resources */,
 				93F7F9C61CA3144E002997E4 /* icon@2x.png in Resources */,
 				93D392111CA2412B00275C00 /* QUploadVC.xib in Resources */,
+				9301B48B1CE90AF500DFA141 /* ppt@2x.png in Resources */,
+				9301B49C1CE9109A00DFA141 /* quicktime@3x.png in Resources */,
 				93CFCAE61CA1A90900063820 /* LoginVC.xib in Resources */,
+				9301B4911CE90AF500DFA141 /* xls@2x.png in Resources */,
+				9301B4871CE90AF500DFA141 /* mpg@2x.png in Resources */,
+				9301B48F1CE90AF500DFA141 /* wma@2x.png in Resources */,
+				9301B4901CE90AF500DFA141 /* wma@3x.png in Resources */,
 				93CFCAD01CA1A67900063820 /* SVProgressHUD.bundle in Resources */,
+				9301B48A1CE90AF500DFA141 /* pdf@3x.png in Resources */,
+				9301B4981CE90ED400DFA141 /* mp4@3x.png in Resources */,
+				9301B4881CE90AF500DFA141 /* mpg@3x.png in Resources */,
 				93F7F9BA1CA30A8E002997E4 /* QN_PlayVideoVC.xib in Resources */,
+				93F58AEB1CE99013001FA889 /* playLogo.png in Resources */,
+				9301B4851CE90AF500DFA141 /* mov@2x.png in Resources */,
+				9301B47C1CE90AF500DFA141 /* csv@3x.png in Resources */,
 				93D3921B1CA243ED00275C00 /* QN_uploadTakeVideoVC.xib in Resources */,
+				9301B47D1CE90AF500DFA141 /* doc@2x.png in Resources */,
+				9301B4861CE90AF500DFA141 /* mov@3x.png in Resources */,
+				9301B4811CE90AF500DFA141 /* flv@2x.png in Resources */,
 				93CFCAF91CA1A94100063820 /* MJRefresh.bundle in Resources */,
+				9301B48D1CE90AF500DFA141 /* rar@2x.png in Resources */,
 				93CFCACD1CA1A67900063820 /* LICENSE.txt in Resources */,
 				93D392191CA243ED00275C00 /* QN_uploadTakePhoto.xib in Resources */,
 				93055BD61CA12605009389FA /* LaunchScreen.storyboard in Resources */,
+				9301B4891CE90AF500DFA141 /* pdf@2x.png in Resources */,
 				93F7F9BF1CA31247002997E4 /* ImageVC.xib in Resources */,
+				9301B48E1CE90AF500DFA141 /* rar@3x.png in Resources */,
 				93F7F9C51CA3144E002997E4 /* icon.png in Resources */,
 				93055BD31CA12605009389FA /* Assets.xcassets in Resources */,
+				9301B4941CE90AF500DFA141 /* zip@3x.png in Resources */,
+				9301B47B1CE90AF500DFA141 /* csv@2x.png in Resources */,
+				9301B49B1CE9109A00DFA141 /* quicktime@2x.png in Resources */,
 				93055BD11CA12605009389FA /* Main.storyboard in Resources */,
+				9301B48C1CE90AF500DFA141 /* ppt@3x.png in Resources */,
+				9301B4971CE90ED400DFA141 /* mp4@2x.png in Resources */,
+				9301B4931CE90AF500DFA141 /* zip@2x.png in Resources */,
+				9301B47E1CE90AF500DFA141 /* doc@3x.png in Resources */,
 				93D3920C1CA240FA00275C00 /* ChooseBucketsVC.xib in Resources */,
+				9301B47F1CE90AF500DFA141 /* exe.png in Resources */,
+				9301B4921CE90AF500DFA141 /* xls@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,49 +663,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		307AABA56EF2E6C7EE04F66E /* Embed Pods Frameworks */ = {
+		28F0CE43FA66948F7A0156B8 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		40AF7A8088B2258831A1056D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CBBD52FF8C9C8FCF9B5C88DC /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3D79E22EE5BC7C94F5A21C3 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QCamera/Pods-QCamera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA0E3A22B46B42CF9F55C218 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QCamera/Pods-QCamera-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -739,7 +879,7 @@
 		};
 		93055BF11CA12605009389FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C289E8037ABB6D061850A68 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 1F1D5C37AF9608ABB7F2183C /* Pods-QCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -750,13 +890,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiniu.QNUploadDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d3dc030f-5212-40f2-84f2-af5606fd511d";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		93055BF21CA12605009389FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82DC7522981EE1D86C7AF8E1 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3E261DF62E20A73171B3E477 /* Pods-QCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -767,7 +907,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiniu.QNUploadDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d3dc030f-5212-40f2-84f2-af5606fd511d";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

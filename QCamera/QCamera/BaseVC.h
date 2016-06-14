@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QiniuSDK.h>
+#import "QiniuSDK.h"
 
 @interface BaseVC : UIViewController
 

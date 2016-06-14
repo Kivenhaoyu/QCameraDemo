@@ -54,7 +54,7 @@
 #define kDevice60 ([[[UIDevice currentDevice] systemVersion] doubleValue]<7.0)     //判断系统版本大于7.0
 #define kDeviceSystemVersion [[UIDevice currentDevice].systemVersion doubleValue]   //获得系统版本
 //字符串空判断
-#define kWipeNull(object) (object==[NSNull null]?@"":object)
+//#define kWipeNull(object) (object==[NSNull null]?@"":object)
 
 //设置颜色
 #define HexRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]

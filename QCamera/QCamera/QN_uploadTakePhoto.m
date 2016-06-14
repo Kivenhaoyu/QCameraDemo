@@ -23,10 +23,14 @@
     // Do any additional setup after loading the view from its nib.
     self.uploadImage.contentMode = UIViewContentModeScaleAspectFit;
     self.showLabel.hidden = YES;
-    
+    self.title = @"图片";
     self.prograssView.hidden = YES;
-    self.prograssView.progress = 0.0f;
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.timer invalidate];
 }
 
 -(void)getTokenFromQN
@@ -36,6 +40,7 @@
         return;
     }
     self.key = self.fillKey.text;
+    self.key = [self.key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *device_id = [UserInfoClass sheardUserInfo].device_id;
     NSArray * array =[[NSArray alloc] initWithObjects:@"X-Qiniu-Key",self.key,@"X-Qiniu-Overwrite",@"false",@"X-Qiniu-Device-Id",device_id,nil];
     [HTTPRequestPost hTTPRequest_PUTpostBody:nil andUrl:@"upload/token" andSucceed:^(NSURLSessionDataTask *task, id responseObject) {
@@ -47,13 +52,19 @@
     } andISstatus:NO andHeader:array];
 }
 - (IBAction)choseAction:(id)sender {
-    [self gotoImageLibrary];
+    [self gotoTakeImage];
+}
+
+- (IBAction)takeLibraryPhotoAction:(id)sender
+{
+    [self gotoLibrary];
 }
 
 - (IBAction)uploadAction:(id)sender {
-    
+    [self.timer invalidate];
     if (!self.pickImage) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"还未选择资源图片" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }else
     {
         self.showLabel.hidden = NO;
@@ -68,7 +79,7 @@
 /**
  *  调用系统相册
  */
--(void)gotoImageLibrary
+-(void)gotoTakeImage
 {
     UIImagePickerController * imgPicker=[[UIImagePickerController alloc]init];
     [imgPicker setSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -76,6 +87,19 @@
     [imgPicker setAllowsEditing:YES];
     [self.navigationController presentViewController:imgPicker animated:YES completion:^{
     }];
+}
+
+//打开本地相册
+-(void)gotoLibrary
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    //设置选择后的图片可被编辑
+//    picker.allowsEditing = YES;
+    [self presentViewController:picker animated:YES completion:nil];
+
 }
 
 //再调用以下委托：
@@ -146,11 +170,25 @@
     [upManager putFile:filePath key: self.key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
         NSLog(@"info ===== %@", info);
         NSLog(@"resp ===== %@", resp);
-        NSLog(@"%@/%@",self.domain,resp[@"key"]);
-        [self.uploadImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",self.host,resp[@"key"]]] placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
+        if (!info.error) {
+            [self uploadImageView];
+        }else
+        {
+            [SVProgressHUD showAlterMessage:[NSString stringWithFormat:@"%@",info.error.userInfo]];
+        }
     } option:uploadOption];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(getPercent) userInfo:nil repeats:YES];
     
+}
+
+- (void)uploadImageView
+{
+    NSArray * array =[[NSArray alloc] initWithObjects:@"X-Qiniu-Key",self.key,nil];
+    [HTTPRequestPost hTTPRequest_PUTpostBody:nil andUrl:@"download/url" andSucceed:^(NSURLSessionDataTask *task, id responseObject) {
+        [self.uploadImage setImageWithURL:[NSURL URLWithString:responseObject[@"url"]] placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
+    } andFailure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    } andISstatus:NO andHeader:array];
 }
 
 - (void)getPercent
@@ -172,6 +210,11 @@
     
     return YES;
     
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.fillKey resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -37,10 +37,10 @@
         [self.tableView headerBeginRefreshing];
     }
     self.title = @"上传记录";
-    UIBarButtonItem * logout = [[UIBarButtonItem alloc] initWithTitle:@"logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
+    UIBarButtonItem * logout = [[UIBarButtonItem alloc] initWithTitle:@"登出" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
     self.navigationItem.rightBarButtonItem = logout;
     
-    UIBarButtonItem * changebucket = [[UIBarButtonItem alloc] initWithTitle:@"Cbucket" style:UIBarButtonItemStylePlain target:self action:@selector(changebucket)];
+    UIBarButtonItem * changebucket = [[UIBarButtonItem alloc] initWithTitle:@"空间切换" style:UIBarButtonItemStylePlain target:self action:@selector(changebucket)];
     self.navigationItem.leftBarButtonItem = changebucket;
 }
 
@@ -149,7 +149,22 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
-    cell.textLabel.text = self.dataArray[indexPath.row][@"name"];
+    NSArray *array = [self.dataArray[indexPath.row][@"mime"] componentsSeparatedByString:@"/"];
+    cell.imageView.image = [UIImage imageNamed:array[1]];
+    if (!([self.dataArray[indexPath.row][@"mime"] rangeOfString:@"image"].location == NSNotFound) || !([self.dataArray[indexPath.row][@"mime"] rangeOfString:@"application"].location == NSNotFound))
+    {
+        cell.imageView.image = [UIImage imageNamed:array[0]];
+    }
+    
+    if (!cell.imageView.image) {
+        if (!([self.dataArray[indexPath.row][@"mime"] rangeOfString:@"video"].location == NSNotFound) ) {
+            cell.imageView.image = [UIImage imageNamed:@"quicktime"];
+        }else{
+        cell.imageView.image = [UIImage imageNamed:@"application"];
+        }
+    }
+    NSString * string = [self.dataArray[indexPath.row][@"name"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    cell.textLabel.text = string;
     return cell;
 }
 
@@ -157,7 +172,7 @@
 {
     if (!([self.dataArray[indexPath.row][@"mime"] rangeOfString:@"video"].location == NSNotFound))
     {
-        QN_PlayVideoVC * play = [[QN_PlayVideoVC alloc] initWithDic:self.dataArray[indexPath.row]];
+        QN_PlayVideoVC * play = [[QN_PlayVideoVC alloc] initWithVideoName:self.dataArray[indexPath.row][@"name"]];
         [self.navigationController pushViewController:play animated:YES];
     }else if (!([self.dataArray[indexPath.row][@"mime"] rangeOfString:@"image"].location == NSNotFound))
     {
@@ -180,6 +195,10 @@
     QN_uploadTakeVideoVC * takevideo = [[QN_uploadTakeVideoVC alloc] init];
     [self.navigationController pushViewController:takevideo animated:YES];
 }
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

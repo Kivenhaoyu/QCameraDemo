@@ -17,11 +17,11 @@
 
 @implementation QN_PlayVideoVC
 
-- (instancetype)initWithDic:(NSDictionary *)dict
+- (instancetype)initWithVideoName:(NSString *)videoName;
 {
     self = [super init];
     if (self) {
-        self.dic = dict;
+        self.videoName = videoName;
     }
     
     return self;
@@ -31,13 +31,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 //    [self.uploadImage addSubview:self.playBtn];
-    self.title = self.dic[@"name"];
+    self.title = self.videoName;
     [self uploadURL];
 }
 
 - (void)uploadURL
 {
-    NSArray * array =[[NSArray alloc] initWithObjects:@"X-Qiniu-Key",self.dic[@"name"],nil];
+    NSArray * array =[[NSArray alloc] initWithObjects:@"X-Qiniu-Key",self.videoName,nil];
     [HTTPRequestPost hTTPRequest_PUTpostBody:nil andUrl:@"download/url" andSucceed:^(NSURLSessionDataTask *task, id responseObject) {
         self.url = responseObject[@"url"];
         [self playAction];

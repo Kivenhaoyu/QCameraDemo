@@ -11,6 +11,7 @@
 @interface QN_uploadTakePhoto : BaseVC<UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *choseBtn;
+@property (weak, nonatomic) IBOutlet UIButton *choseFromLibraryBtn;
 @property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
 @property (weak, nonatomic) IBOutlet UILabel *showLabel;
 @property (weak, nonatomic) IBOutlet UIImageView * uploadImage;

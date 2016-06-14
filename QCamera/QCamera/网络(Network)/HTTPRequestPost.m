@@ -54,8 +54,11 @@
         
 //        if([[responseObject objectForKey:@"stat"] isEqualToString:@"ok"])
 //        {
+        if (responseObject) {
             succeed(task,responseObject);
             return ;
+        }
+        
 //        }
 //
 //        if([responseObject[@"code"] isEqualToString:@"1000"]&&[responseObject[@"stat"] isEqualToString:@"fail"])
@@ -200,8 +203,10 @@
     
     [httpRequestPost.AFAppDotNetClient GET:url parameters:body success:^(NSURLSessionDataTask *task, id responseObject) {
         DebugLog(@"%@",responseObject);
-        succeed(task,responseObject);
-        return ;
+        if (responseObject) {
+            succeed(task,responseObject);
+            return ;
+        }
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         failure(task,error);
         [SVProgressHUD showErrorWithStatus:@"网络异常"];
@@ -237,8 +242,10 @@
     
     [httpRequestPost.AFAppDotNetClient PUT:url parameters:body success:^(NSURLSessionDataTask *task, id responseObject) {
         DebugLog(@"%@",responseObject);
-        succeed(task,responseObject);
-        return ;
+        if (responseObject) {
+            succeed(task,responseObject);
+            return ;
+        }
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         failure(task,error);
         [SVProgressHUD showErrorWithStatus:@"网络异常"];

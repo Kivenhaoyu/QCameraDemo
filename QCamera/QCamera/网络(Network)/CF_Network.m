@@ -56,7 +56,7 @@
                 success(responseObject);
                 return;
             }
-            NSString *msg=[responseObject objectForKey:@"Message"];
+//            NSString *msg=[responseObject objectForKey:@"Message"];
 
 //            [SVProgressHUD showErrorWithStatus:msg];
         }

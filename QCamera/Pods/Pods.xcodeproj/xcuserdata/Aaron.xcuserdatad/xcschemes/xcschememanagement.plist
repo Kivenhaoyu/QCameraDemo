@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-QCamera.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0DC8BCC337CBE1F795C675E87C3D1B3E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6627E2CE58504A680DE862D5526B302C</key>
+		<key>72D4BB2300A042A3D16C8CCF83372F48</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6206381242CDEF9B0092AC555D3639A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CCF85387F4489FE5C2F2A00CED0210AC</key>
+		<key>F3BA28EDD97EB95C58718A6F25D09122</key>
 		<dict>
 			<key>primary</key>
 			<true/>
